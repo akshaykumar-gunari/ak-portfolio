@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "",
+  basePath: "/ak-portfolio",
+  trailingSlash: true,
 };
 
 export default nextConfig;
