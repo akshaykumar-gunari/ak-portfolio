@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Briefcase, Award, BookOpen, Code2 } from "lucide-react";
 import Image from "next/image";
+import { SITE_BASE_PATH } from "@/lib/site-config";
 import SectionHeading from "./ui/SectionHeading";
 import TerminalWidget from "./ui/TerminalWidget";
 
@@ -34,7 +35,7 @@ export default function About() {
             <div className="card-glass rounded-2xl p-6 text-center sticky top-24">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-xl overflow-hidden border-2 border-border/50">
                 <Image
-                  src="/images/AK.png"
+                  src={`${SITE_BASE_PATH}/images/AK.png`}
                   alt="Akshaykumar Gunari"
                   fill
                   className="object-cover"
@@ -53,7 +54,7 @@ export default function About() {
               {/* Signature */}
               <div className="relative h-16 w-48 mx-auto mb-4 opacity-60">
                 <Image
-                  src="/images/signature.gif"
+                  src={`${SITE_BASE_PATH}/images/signature.gif`}
                   alt="Signature"
                   fill
                   className="object-contain"

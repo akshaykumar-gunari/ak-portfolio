@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import ThemeToggle from "./ui/ThemeToggle";
 
 const navItems = [
@@ -76,13 +77,13 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <a
+          <Link
             href="/resume.pdf"
             target="_blank"
             className="ml-2 px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20 text-foreground border border-primary/20 hover:border-primary/40 hover:from-primary/30 hover:to-secondary/30 transition-all duration-200"
           >
             Resume
-          </a>
+          </Link>
           <div className="ml-2">
             <ThemeToggle />
           </div>
@@ -125,13 +126,13 @@ export default function Navbar() {
                   {item.label}
                 </a>
               ))}
-              <a
+              <Link
                 href="/resume.pdf"
                 target="_blank"
                 className="px-4 py-3 text-sm font-medium rounded-lg bg-primary/10 text-primary border border-primary/20 text-center mt-2"
               >
                 Resume
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

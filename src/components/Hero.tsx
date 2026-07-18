@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, MapPin, Sparkles, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { SITE_BASE_PATH } from "@/lib/site-config";
 import SocialLinks from "./ui/SocialLinks";
 import ParticleField from "./ParticleField";
 
@@ -64,7 +66,7 @@ export default function Hero() {
                 className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-background cursor-pointer group"
               >
                 <Image
-                  src="/images/AK.png"
+                  src={`${SITE_BASE_PATH}/images/AK.png`}
                   alt="Akshaykumar Gunari"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -161,13 +163,13 @@ export default function Hero() {
               >
                 Get in Touch
               </a>
-              <a
+              <Link
                 href="/resume.pdf"
                 target="_blank"
                 className="px-8 py-3 rounded-lg border border-border/50 text-foreground font-medium hover:bg-surface/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/30"
               >
                 View Resume
-              </a>
+              </Link>
             </motion.div>
 
             <motion.div
@@ -227,19 +229,24 @@ export default function Hero() {
           </motion.button>
 
           {/* Image container */}
-          <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8 pointer-events-none">
-            <motion.img
-              src="/images/AK.png"
-              alt="Akshaykumar Gunari"
-              initial={{ scale: 0.3, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.3, opacity: 0 }}
-              transition={{ type: "spring", damping: 20, stiffness: 200 }}
-              className="max-w-full max-h-full w-auto h-auto object-contain rounded-2xl shadow-2xl pointer-events-auto cursor-pointer"
-              style={{ maxHeight: "85vh" }}
-              onClick={() => setImageOpen(false)}
-            />
-          </div>
+          <motion.div
+            initial={{ scale: 0.3, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.3, opacity: 0 }}
+            transition={{ type: "spring", damping: 20, stiffness: 200 }}
+            className="absolute inset-0 flex items-center justify-center p-4 md:p-8 pointer-events-none"
+          >
+            <div className="relative max-w-full max-h-full w-auto h-auto pointer-events-auto cursor-pointer" style={{ maxHeight: "85vh" }} onClick={() => setImageOpen(false)}>
+                <Image
+                  src={`${SITE_BASE_PATH}/images/AK.png`}
+                  alt="Akshaykumar Gunari"
+                  width={800}
+                  height={800}
+                  className="max-w-full max-h-[85vh] w-auto h-auto object-contain rounded-2xl shadow-2xl"
+                  unoptimized
+                />
+            </div>
+          </motion.div>
         </div>
       )}
     </AnimatePresence>
