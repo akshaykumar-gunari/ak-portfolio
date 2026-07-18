@@ -5,7 +5,7 @@ import { Calendar, Briefcase, GraduationCap, Trophy, FileCheck, Rocket } from "l
 
 const milestones = [
   {
-    year: "2017",
+    date: "August 2017",
     title: "Started B.E. at KLE Tech",
     description: "Began studies in Computer Science & Engineering",
     icon: GraduationCap,
@@ -14,7 +14,7 @@ const milestones = [
     border: "border-primary/20",
   },
   {
-    year: "2019",
+    date: "June 2019",
     title: "Research Intern at IIT Delhi",
     description: "Worked on deep learning models at CVIT lab",
     icon: Rocket,
@@ -23,7 +23,7 @@ const milestones = [
     border: "border-secondary/20",
   },
   {
-    year: "2021",
+    date: "July 2021",
     title: "Joined AMD India",
     description: "Linux kernel and device driver development",
     icon: Briefcase,
@@ -32,7 +32,7 @@ const milestones = [
     border: "border-primary/20",
   },
   {
-    year: "2021",
+    date: "October 2021",
     title: "First Publication at ICCV",
     description: "ICCV workshop paper on deep learning",
     icon: Trophy,
@@ -41,7 +41,7 @@ const milestones = [
     border: "border-warning/20",
   },
   {
-    year: "2022",
+    date: "December 2022",
     title: "Spotlight Awards (x2)",
     description: "Two consecutive Spotlight Awards at AMD",
     icon: Trophy,
@@ -50,7 +50,7 @@ const milestones = [
     border: "border-warning/20",
   },
   {
-    year: "2022",
+    date: "December 2022",
     title: "Patent Filed",
     description: "3D Point Cloud Decomposition using attention mechanisms",
     icon: FileCheck,
@@ -59,7 +59,7 @@ const milestones = [
     border: "border-success/20",
   },
   {
-    year: "2024",
+    date: "March 2024",
     title: "Joined Juniper Networks",
     description: "Software Engineer developing Linux kernel drivers for QFX-5K",
     icon: Briefcase,
@@ -68,7 +68,7 @@ const milestones = [
     border: "border-primary/20",
   },
   {
-    year: "2024",
+    date: "May 2024",
     title: "M.Tech AI/ML at BITS Pilani",
     description: "Pursuing advanced studies in artificial intelligence",
     icon: GraduationCap,
@@ -113,7 +113,7 @@ export default function Milestones() {
               const isLeft = i % 2 === 0;
               return (
                 <motion.div
-                  key={`${item.year}-${item.title}`}
+                  key={`${item.date}-${item.title}`}
                   initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -131,7 +131,7 @@ export default function Milestones() {
                         </div>
                         <div>
                           <span className="text-xs font-mono text-muted">
-                            {item.year}
+                            {item.date}
                           </span>
                           <h3 className="text-sm font-semibold text-foreground">
                             {item.title}
