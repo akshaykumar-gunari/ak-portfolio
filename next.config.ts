@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/ak-portfolio",
+  basePath: process.env.GITHUB_ACTIONS ? "/ak-portfolio" : "",
   trailingSlash: true,
 };
 
