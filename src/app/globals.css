@@ -2,7 +2,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
+@theme {
   --color-background: #ffffff;
   --color-foreground: #0f172a;
   --color-surface: #f8fafc;
@@ -19,20 +19,20 @@
   --font-mono: var(--font-geist-mono);
 }
 
-.dark {
-  --color-background: #121218;
-  --color-foreground: #d4d4dc;
-  --color-surface: #1a1a22;
-  --color-surface-light: #22222c;
-  --color-border: #2a2a38;
-  --color-muted: #7a7e92;
-}
-
-* {
-  scroll-behavior: smooth;
-}
-
 @layer base {
+  .dark {
+    --color-background: #121218;
+    --color-foreground: #d4d4dc;
+    --color-surface: #1a1a22;
+    --color-surface-light: #22222c;
+    --color-border: #2a2a38;
+    --color-muted: #7a7e92;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: var(--color-background);
     color: var(--color-foreground);
@@ -118,7 +118,6 @@
   50% { background-position: 100% 50%; }
 }
 
-/* Light mode cards */
 .card-glass {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px);
@@ -131,7 +130,6 @@
   background: rgba(255, 255, 255, 0.9);
 }
 
-/* Dark mode cards */
 .dark .card-glass {
   background: rgba(26, 26, 34, 0.8);
   border: 1px solid rgba(42, 42, 56, 0.8);
@@ -165,7 +163,6 @@
   50% { opacity: 0.8; }
 }
 
-/* Noise texture overlay */
 .noise-bg::before {
   content: "";
   position: absolute;
@@ -175,7 +172,6 @@
   z-index: 0;
 }
 
-/* Input focus styles for light mode */
 input:focus, textarea:focus {
   outline: none;
   border-color: #06b6d4;
