@@ -3,28 +3,23 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-surface: #f8fafc;
+  --color-surface-light: #f1f5f9;
+  --color-border: #e2e8f0;
   --color-primary: #06b6d4;
   --color-primary-light: #22d3ee;
   --color-secondary: #8b5cf6;
   --color-secondary-light: #a78bfa;
+  --color-muted: #64748b;
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* Light mode (default) */
-:root {
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  --color-surface: #f8fafc;
-  --color-surface-light: #f1f5f9;
-  --color-border: #e2e8f0;
-  --color-muted: #64748b;
-}
-
-/* Dark mode */
-:root.dark {
+.dark {
   --color-background: #121218;
   --color-foreground: #d4d4dc;
   --color-surface: #1a1a22;
@@ -37,20 +32,22 @@
   scroll-behavior: smooth;
 }
 
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+@layer base {
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
-::selection {
-  background: rgba(6, 182, 212, 0.3);
-  color: #0f172a;
-}
+  ::selection {
+    background: rgba(6, 182, 212, 0.3);
+    color: #0f172a;
+  }
 
-.dark ::selection {
-  color: #ffffff;
+  .dark ::selection {
+    color: #ffffff;
+  }
 }
 
 ::-webkit-scrollbar {
